@@ -1,0 +1,36 @@
+<section class="donation-widget">
+  <header class="pending-donation-message">
+    <label ng-if="!donationComplete">
+      <span class="bold">${{getPendingAmount()}}</span> still needed for this project
+    </label>
+    <label ng-if="donationComplete">
+      <span class="bold">${{getReceivedDonation()}}</span> received for this project
+    </label>
+  </header>
+  <progress-bar max-value="{{requiredDonation}}" current-value="{{getReceivedDonation()}}"></progress-bar>
+  <section class="details-section" ng-if="!donationComplete">
+    <h3 class="details-header"><span class="highlight bold">Only {{daysLeftForDonationEnd()}} days left</span> to fund this project.</h3>
+    <p class="details-body" ng-if="!donationExpired && getDonorsCount() > 0">
+      Join the {{getDonorsCount()}} other donors who have already supported this project. Every dollar helps.
+    </p>
+    <p class="details-body" ng-if="!donationExpired && getDonorsCount() == 0">
+      Be the first donor to support this project. Every dollar helps.
+    </p>
+    <p class="details-body" ng-if="donationExpired">
+      This donation has expired. Thanks for showing interest in helping us.
+    </p>
+    <form class="donation-form">
+      <i class="placeholder">$</i>
+      <input class="from-input" ng-disabled="donationExpired" type="number" value="50" ng-model="donationAmount"/>
+      <button class="btn btn-submit" ng-disabled="donationExpired" ng-click="submitDonation(donationAmount)">Give Now</button>
+    </form>
+    <a class="link" ng-click="whyDonate()">Why give $50?</a>
+  </section>
+  <section class="details-section" ng-if="donationComplete">
+    <h3 class="details-header">We have received our required donation. Thanks for showing interest.</h3>
+  </section>
+  <footer class="widget-footer">
+    <button class="btn" ng-click="saveForLater()">Save for later</button>
+    <button class="btn" ng-click="shareOnSocialMedia()">Tell your friends</button>
+  </footer>
+</section>

@@ -1,0 +1,89 @@
+@import "variables";
+@import "mixin";
+
+body {
+  text-align: center;
+  font-family: $default-font-family;
+  font-size: $std-font-size;
+  letter-spacing: 1px;
+  color: $std-font-color;
+  overflow: auto;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+input:disabled, button:disabled {
+  cursor: not-allowed;
+}
+
+.highlight {
+  color: $std-highlight-color;
+}
+
+.from-input {
+  border: 1px solid $std-border-color;
+  border-radius: $std-border-radius;
+  height: 30px;
+  padding: 10px 20px;
+  font-size: $std-font-size;
+}
+
+.btn {
+  border: 1px solid $std-border-color;
+  border-radius: $std-border-radius;
+  height: 45px;
+  padding: 10px 20px;
+  font-size: $std-font-size;
+  background: $std-btn-bg;
+  font-family: $default-font-family;
+  letter-spacing: 1px;
+  @include border-radius(218, 218, 218, 1);
+  cursor: pointer;
+}
+
+.btn-submit {
+  border: 1px solid $submit-btn-border-color;
+  height: 48px;
+  background: $submit-btn-bg;
+  color: $white;
+  @include border-radius(27, 177, 43, 1);
+}
+
+.link {
+  font-style: italic;
+  text-decoration: none;
+  color: $std-link-color;
+  cursor: pointer;
+}
+
+.btn-fb {
+  background: $btn-fb-bg;
+  border-color: $btn-fb-border-color;
+  @include border-radius(48, 71, 127, 1);
+  color: $white;
+}
+
+.btn-tweeter {
+  background: $btn-tweeter-bg;
+  border-color: $btn-tweeter-border-color;
+  @include border-radius(68, 140, 198, 1);
+  color: $white;
+}
+
+.modal {
+  font-family: $default-font-family;
+}
+
+.ngdialog-content {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.popup-message {
+  background: $popup-msg-bg;
+  border-radius: $std-border-radius;
+  padding: 10px;
+  color: $white;
+}

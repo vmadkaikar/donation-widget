@@ -1,0 +1,5 @@
+@mixin border-radius($r, $g, $b, $opacity) {
+  -webkit-box-shadow: 0 2px 0 0 rgba($r, $g, $b, $opacity);
+  -moz-box-shadow: 0 2px 0 0  rgba($r, $g, $b, $opacity);
+  box-shadow: 0 2px 0 0  rgba($r, $g, $b, $opacity);
+}

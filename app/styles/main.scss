@@ -1,0 +1,88 @@
+@import "variables";
+@import "mixin";
+
+.donation-widget {
+  min-width: 420px;
+  max-width: 600px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.pending-donation-message {
+  background: $dark-gray;
+  padding: 20px 40px;
+  margin-bottom: 15px;
+  border-radius: $std-border-radius;
+  color: #fff;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    right: 50px;
+    border: solid $white;
+    border-width: 12px 8px;
+    border-top-color: $dark-gray;
+  }
+}
+
+.details-section {
+  border: 1px solid $std-border-color;
+  padding: 20px;
+  @include border-radius(218, 218, 218, 0.3);
+}
+
+.details-header {
+  margin-bottom: 20px;
+}
+
+.details-body {
+  margin-bottom: 20px;
+  line-height: 25px;
+}
+
+.donation-form {
+  margin-bottom: 15px;
+  position: relative;
+  .placeholder {
+    font-weight: bold;
+    position: absolute;
+    top: 16px;
+    left: 9px;
+  }
+}
+
+.widget-footer {
+  text-align: center;
+  padding: 10px;
+}
+
+.share-modal {
+  background: $white;
+  border-radius: $std-border-radius;
+  .modal-header {
+    background: $share-modal-header-bg;
+    height: 75px;
+    padding: 20px;
+    color: $white;
+    font-size: $large-font-size;
+    border-radius: $std-border-radius $std-border-radius 0 0;
+  }
+  .modal-body {
+    padding: 20px;
+  }
+  .share-buttons {
+    margin-top: 10px;
+  }
+}
+
+.why-donate-modal {
+  background: $popup-msg-bg;
+  color: $white;
+  border-radius: $std-border-radius;
+  padding: 15px;
+  .modal-header {
+    font-size: $large-font-size;
+  }
+}
